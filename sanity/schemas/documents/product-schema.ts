@@ -30,6 +30,12 @@ export const product = defineType({
       type: "array",
       of: [{ type: 'string' }]
     },
+    defineField({
+      name: "tags",
+      title: "Product Tags",
+      type: "array",
+      of: [{ type: 'tags' }]
+    }),
     {
       name: "sizes",
       title: "Sizes",
