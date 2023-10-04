@@ -33,7 +33,7 @@ export const events = defineType({
       name: "tags",
       title: "Event Tags",
       type: "array",
-      of: [{ type: 'tags' }]
+      of: [{type: 'reference', to: {type: 'tags'}}],
     }),
     defineField({
       name: "url",

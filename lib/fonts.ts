@@ -1,5 +1,5 @@
 import {
-  JetBrains_Mono as FontMono,
+  Space_Grotesk as FontMono,
   Plus_Jakarta_Sans as FontSans,
 } from "next/font/google"
 
