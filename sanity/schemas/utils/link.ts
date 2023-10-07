@@ -1,5 +1,4 @@
 import {defineField} from 'sanity'
-import {PAGE_REFERENCES} from '../../../constants'
 
 export default defineField({
   name: 'link',
@@ -8,24 +7,34 @@ export default defineField({
   fields: [
     defineField({
       name: "text",
-      title: "Link Text",
+      title: "Text",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "external",
-      title: "External Url",
+      name: "url",
+      title: "URL",
       type: "url",
-    }),
-    defineField({
-      name: 'internal',
-      type: 'reference',
-      weak: true,
-      to: [{ type: "product" }],
     }),
     defineField({
       title: 'Email',
       name: 'email',
       type: 'email',
+      description: 'adding an email will override any url provided'
     }),
+    defineField({
+      title: 'Button Style',
+      name: 'style',
+      type: 'string',
+      initialValue: 'default',
+      options: {
+        list: [
+          { title: 'Default', value: 'default' },
+          { title: 'Ghost', value: 'ghost' },
+          { title: 'Text', value: 'text' },
+        ],
+      },
+    }),
+    
   ]
 })

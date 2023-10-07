@@ -16,8 +16,8 @@ interface Blog {
   author: string;
   date: string;
   body: any;
-  color?: {
-    hex?: string;
+  color: {
+    hex: string;
   };
 }
 
@@ -78,29 +78,30 @@ export default class BlogSlider extends Component<Props> {
         {blogs.map(blog => (
           <div 
               key={`blog-` + blog._id} 
-              className='blog px-4 pb-8 pt-16 sm:px-6'
-              style={{ "backgroundColor": blog.color?.hex || 'transparent' }}
+              className='blog'
             >
-              {blog.image && (
-                <Image
-                  src={blog.image}
-                  width={168}
-                  height={168}
-                  alt="Event Type Icon"
-                  className='mb-16'
-                />
-              )}
-              <h2 className="text-5xl sm:text-6xl">{blog.title}</h2>
-              <h6 className='mb-6 mt-4 flex gap-2'>
-                {blog.author}
-                <Image
-                  src='/icons/flower.svg'
-                  width={16}
-                  height={16}
-                  alt="Event Type Icon"
-                />
-                {this.formatDate(blog.date)}</h6>
-              <PortableText value={blog.body} components={RichTextComponents} />
+              <div className='container px-4 pb-8 pt-16 sm:px-6' style={{"backgroundColor": blog.color.hex}}>
+                {blog.image && (
+                  <Image
+                    src={blog.image}
+                    width={168}
+                    height={168}
+                    alt="Event Type Icon"
+                    className='mx-auto mb-16'
+                  />
+                )}
+                <h2 className="text-2xl sm:text-3xl xl:text-5xl">{blog.title}</h2>
+                <p className='mt-3 mb-4 sm:mb-6 sm:mt-4 flex gap-2 text-sm flex-wrap'>
+                  {blog.author}
+                  <Image
+                    src='/icons/flower.svg'
+                    width={16}
+                    height={16}
+                    alt="Event Type Icon"
+                  />
+                  {this.formatDate(blog.date)}</p>
+                <PortableText value={blog.body} components={RichTextComponents} />
+              </div>
             </div>
         ))}
       </Slider>

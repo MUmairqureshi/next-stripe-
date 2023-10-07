@@ -12,7 +12,7 @@ export default async function Page() {
     }
   `
   const settings = await client.fetch(query)
-  console.log(settings)
+  // console.log(settings)
 
   return (
     <div className='contact-page'>

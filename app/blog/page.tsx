@@ -12,6 +12,7 @@ export default async function Page() {
     }
   `
   const blogs = await client.fetch(query)
+  // console.log(blogs[0].color.hex)
   
   return (
     <div className="blogs-page">

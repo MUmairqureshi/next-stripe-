@@ -26,6 +26,7 @@ module.exports = {
         white: "var(--white)",
         pink: "var(--pink)",
         brown: "var(--brown)",
+        brownLight: "var(--brown-light)",
         cream: "var(--cream)",
         blue: "var(--blue)",
         blueLight: "var(--blue-light)",
@@ -94,5 +95,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate")
+  ],
 }

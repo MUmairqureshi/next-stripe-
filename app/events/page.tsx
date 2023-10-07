@@ -18,7 +18,7 @@ type ModalData = {
 
 export default async function Page() {
   const events = await client.fetch(query)
-  console.log(events)
+  // console.log(events)
 
   
 

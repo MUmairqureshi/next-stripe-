@@ -1,6 +1,7 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
-
+import { client } from "@/sanity/lib/client"
+import { groq } from "next-sanity"
 import { siteConfig } from "@/config/site"
 import { fontMono } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
@@ -21,7 +22,33 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+// type Settings = {
+//   linkbarText: string;
+//   linkbarUrl: string;
+//   showLinkbar: string;
+//   headerLogo: string;
+//   menuIcon: string;
+//   accountIcon: string;
+//   cartIcon: string;
+//   menuLinks: string;
+//   footerLogo: string;
+//   formCaption: string;
+//   companyName: string;
+//   footerFinePrint: string;
+//   footerTextBlock: string;
+//   footerLinkLists: string;
+// }
+
+const query = groq`
+  *[_type == "settings"][0]{
+    ...
+  }
+`
+
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const settings = await client.fetch(query);
+  // console.log(settings);
+
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -34,10 +61,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <Providers>
             <div className="relative flex min-h-screen flex-col">
-              {/* <SiteHeader/> */}
+              <SiteHeader settings={settings} />
+
               {/* <SiteBlob/> */}
               <div className="flex-1">{children}</div>
-              {/* <SiteFooter/> */}
+              <SiteFooter settings={settings}/>
             </div>
           </Providers>
         </body>
