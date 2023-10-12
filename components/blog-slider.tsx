@@ -75,19 +75,22 @@ export default class BlogSlider extends Component<Props> {
 
     return (
       <Slider {...settings}>
-        {blogs.map(blog => (
+        {blogs.map((blog, index) => (
           <div 
               key={`blog-` + blog._id} 
-              className='blog'
+              className="blog"
             >
-              <div className='container px-4 pb-8 pt-16 sm:px-6' style={{"backgroundColor": blog.color.hex}}>
+              <div 
+                className={`container px-4 py-8 sm:px-6 ${index % 2 !== 0 ? 'bg-paper-1' : 'bg-paper-2'}`}
+                style={{"backgroundColor": blog.color.hex}}
+              >
                 {blog.image && (
                   <Image
                     src={blog.image}
-                    width={168}
-                    height={168}
+                    width={124}
+                    height={124}
                     alt="Event Type Icon"
-                    className='mx-auto mb-16'
+                    className='mx-auto mb-12'
                   />
                 )}
                 <h2 className="text-2xl sm:text-3xl xl:text-5xl">{blog.title}</h2>

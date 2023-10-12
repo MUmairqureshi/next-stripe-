@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/buttons"
 import Link from "next/link"
 import Image from 'next/image'
 import urlFor from '@/lib/urlfor'
@@ -122,11 +122,11 @@ export default function EventItems({ events = [] }: Props) {
 
             <div className='button-wrapper flex items-center gap-4'>
               {!hasDatePassed(event.date) && (
-                <Link href={event.url}>
+                <a target="_blank" href={event.url}>
                   <Button size="sm" className="relative">
                     RSVP
                   </Button>
-                </Link>
+                </a>
               )}
               
               <Button size="sm" className="relative" variant="ghost" onClick={() => handleOpenModal(event)}>

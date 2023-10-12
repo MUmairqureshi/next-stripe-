@@ -1,0 +1,23 @@
+/* GLOBAL STYLES */
+@import "./global/base";
+@import "./global/mixins";
+@import "./global/utils";
+
+/* COMPONENT STYLES */
+
+/* THEME STYLES */
+@import "./themes/default-theme";
+
+/* SECTION STYLES */
+@import "./sections/linkbar";
+@import "./sections/header";
+@import "./sections/footer";
+
+/* PAGE STYLES */
+
+
+.blog {
+  max-height: calc(100vh - 148px);
+  overflow: scroll;
+}
+

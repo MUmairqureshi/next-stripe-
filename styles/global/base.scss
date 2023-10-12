@@ -1,0 +1,23 @@
+* { transition: all 0.25s ease; }
+
+.gradient-background {
+  background: linear-gradient(180deg, #C8C995 0%, #AEDDF7 60.63%);
+}
+
+$green: #497b55;
+$green-light: #c8c995;
+$green-dark: #073913;
+
+$black: #073913;
+$white: #fdfdfb;
+$background: #FCF2D9;
+
+$pink: #dd878d;
+$brown: #b59583;
+$brown-light: #dfcdb7;
+$cream: #fcf2d9;
+$blue: #2e6270;
+$blue-light: #bbe1e3;
+$blue-lightest: #B3DBF4;
+$blue-trans: rgba(187, 225, 227, 0.7);
+$blue-trans-light: rgba(46, 98, 112, 0.2);

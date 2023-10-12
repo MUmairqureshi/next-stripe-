@@ -1,4 +1,4 @@
-const ExternalArrow = ({ color = "#C8C995" }) => {
+const ExternalArrow = ({ color = "#073913" }) => {
   return (
     <svg
       width="12"

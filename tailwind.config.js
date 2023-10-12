@@ -5,13 +5,6 @@ module.exports = {
   darkMode: ["class"],
   content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
         border: "var(--green)",
@@ -19,10 +12,11 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "var(--background)",
         foreground: "hsl(var(--foreground))",
+        gradient: "var(--gradient)",
         green: "var(--green)",
         greenDark: "var(--green-dark)",
         greenLight: "var(--green-light)",
-        black: "var(--green)",
+        black: "var(--black)",
         white: "var(--white)",
         pink: "var(--pink)",
         brown: "var(--brown)",
@@ -30,6 +24,7 @@ module.exports = {
         cream: "var(--cream)",
         blue: "var(--blue)",
         blueLight: "var(--blue-light)",
+        blueLightest: "var(--blue-lightest)",
         blueTrans: "rgba((--blue-trans))",
         blueTransLight: "rgba((--blue-trans-light))",
         primary: {

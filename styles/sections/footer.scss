@@ -1,0 +1,114 @@
+.site-footer {
+  padding: 16px 0;
+  background: $green-light;
+
+  // @include bp(sm){
+  //   padding: 24px 0;
+  // }
+
+  // @include bp(lg){
+  //   padding: 40px 0;
+  // }
+
+  .container {
+    padding: 0 16px;
+    max-width: 1536px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include bp(sm) {
+      // padding: 0 24px;
+      gap: 24px;
+    }
+  
+    @include bp(xl) {
+      // padding: 0 40px;
+      gap: 40px;
+    }
+
+    & > * {
+      display: flex;
+      flex-direction: column;
+
+      @include bp(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .brand {
+    gap: 16px;
+  }
+
+  .logo-caption {
+    max-width: 420px;
+
+    @include bp(sm){
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+    }
+
+    h6 {
+      margin-top: 8px;
+
+      @include bp(sm){
+        margin-top: 0; 
+      }
+    }
+  }
+
+  .information {
+    gap: 24px;
+    justify-content: flex-start;
+
+    // @include bp(md){ gap: 32px; }
+  }
+
+  .copyright {
+    gap: 8px;
+    text-align: center;
+
+    @include bp(xl){
+      text-align: left;
+    }
+    
+
+    // small { font-weight: 500; }
+  }
+
+  form {
+    .input-group { 
+      margin-top: 8px; 
+      @include bp(md){ margin-top: 16px; }
+    }
+  }
+
+  .button-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include bp(sm){
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @include bp(md){
+      flex-direction: column;
+      max-width: 380px;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  .footer-link-list {
+    width: 100%; 
+    li { margin-top: 6px; }
+  }
+}

@@ -7,7 +7,7 @@ import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
 
 import { SanityProduct } from "@/config/inventory"
 import { getSizeName } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/buttons"
 import { useToast } from "@/components/ui/use-toast"
 
 interface Props {

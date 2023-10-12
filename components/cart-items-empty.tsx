@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Plus, XCircle } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/buttons"
 
 export function CartItemsEmpty() {
   return (

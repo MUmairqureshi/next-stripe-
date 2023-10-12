@@ -1,0 +1,21 @@
+.linkbar {
+  padding: 8px 16px;
+  width: 100%;
+  background: $brown-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // cursor: pointer;
+
+  &:hover {
+    background: $brown;
+  }
+
+  a, span {
+    width: 100%;
+    
+    @include bp(sm){
+      text-align: center;
+    }
+  }
+}

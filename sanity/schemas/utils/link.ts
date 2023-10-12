@@ -26,12 +26,13 @@ export default defineField({
       title: 'Button Style',
       name: 'style',
       type: 'string',
-      initialValue: 'default',
+      initialValue: 'primary',
       options: {
         list: [
-          { title: 'Default', value: 'default' },
-          { title: 'Ghost', value: 'ghost' },
-          { title: 'Text', value: 'text' },
+          { title: 'Primary', value: 'primary' },
+          { title: 'Secondary', value: 'secondary' },
+          { title: 'Outline', value: 'outline' },
+          { title: 'Link', value: 'link' },
         ],
       },
     }),

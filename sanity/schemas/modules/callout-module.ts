@@ -12,7 +12,7 @@ export default defineField({
     {
       default: true,
       name: 'editorial',
-      title: 'Editorial',
+      title: 'Text',
     },
     {
       name: 'settings',
@@ -46,7 +46,7 @@ export default defineField({
       group: 'media',
     }),
     defineField({
-      name: "textblockOne",
+      name: "textBlock",
       title: "Text Block",
       type: 'array',
       validation: (Rule) => Rule.max(2),

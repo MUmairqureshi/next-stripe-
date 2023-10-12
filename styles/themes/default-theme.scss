@@ -1,0 +1,29 @@
+.bg-paper-4 {
+  background-image: url('/backgrounds/paper-4.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $green-light;
+}
+
+.bg-paper-3 {
+  background-image: url('/backgrounds/paper-3.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $background;
+}
+
+.bg-paper-2 {
+  background-image: url('/backgrounds/paper-2.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-paper-1 {
+  background-image: url('/backgrounds/paper-1.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.text-block {
+  & > * + * { margin-top: 8px;}
+}

@@ -9,7 +9,7 @@ import { Product } from "use-shopping-cart/core"
 
 import { shimmer, toBase64 } from "@/lib/image"
 import { getSizeName } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/buttons"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/components/ui/use-toast"
 import { CartItemsEmpty } from "@/components/cart-items-empty"

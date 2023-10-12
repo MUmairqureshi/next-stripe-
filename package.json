@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-app",
+  "name": "hike-clerb-store",
   "version": "0.0.2",
   "private": true,
   "scripts": {
@@ -60,7 +60,8 @@
     "eslint-plugin-tailwindcss": "3.8.0",
     "postcss": "8.4.21",
     "prettier": "2.7.1",
-    "tailwindcss": "3.3.1",
+    "sass": "^1.69.0",
+    "tailwindcss": "^3.3.1",
     "typescript": "4.9.3"
   }
 }
