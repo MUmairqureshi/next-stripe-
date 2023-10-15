@@ -15,9 +15,251 @@
 
 /* PAGE STYLES */
 
+.blogs-page {
+  .blog {
+    max-height: calc(100vh - 180px);
+    overflow: scroll;
+  }
 
-.blog {
-  max-height: calc(100vh - 148px);
-  overflow: scroll;
+  .slick-arrow {
+    display: block;
+    bottom: 0;
+    top: unset;
+    z-index: 11;
+    width: 24px;
+    height: 20px;
+
+    &:before {
+      display: none;
+    }
+
+    &:hover {
+      background: unset;
+      color: unset;
+      outline: unset;
+    }
+
+    &.slick-disabled {
+      display: none !important;
+    }
+  }
+
+  .slick-prev {
+    left: 16px;
+    right: unset;
+    background-image: url('/icons/arrow-left.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url('/icons/arrow-left.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 14px;
+    }
+  }
+
+  .slick-next {
+    right: 16px;
+    left: unset;
+    background-image: url('/icons/arrow-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url('/icons/arrow-right.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      right: 14px;
+    }
+  }
+
+  .slick-dots {
+    bottom: 0;
+    z-index: 10;
+    background: $cream;
+    position: relative;
+    padding-bottom: 5px;
+
+    li {
+      margin: 0;
+
+      button {
+        width: 8px;
+        height: 8px;
+        background: $green;
+        opacity: 1;
+        border-radius: 100%;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    li.slick-active {
+      button {
+        background-image: url('/icons/flower.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border-radius: 0;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
 }
+
+.contact-page {
+  .contact-section {
+    max-width: 1440px;
+    margin: 0 auto;
+    .container {
+      margin: 0 auto; 
+      
+      @include bp(sm){
+        background-image: url('/backgrounds/notebook.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 32px;
+  
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center; 
+        text-align: center;
+
+        gap: 144px;
+        width: 90vw;
+        height: 62vw;
+
+        & > * { 
+          width: 100%; 
+        }
+      }
+
+      @include bp(lg){
+        width: 70vw;
+        height: 49vw;
+        gap: 208px;
+      }
+
+      @include bp(xl){
+        gap: 304px;
+        padding: 48px;
+        width: 100%;
+        height: 896px;
+      }
+    }
+
+    .contact-text {
+      p { font-size: 14px; }
+      h1, h2, h3 { font-size: 18px; }
+      h4, h5, h6 { font-size: 16px; }
+
+      @include bp(sm){
+        background-image: url('/backgrounds/notecard.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        padding: 48px 16px 16px;
+        aspect-ratio: 423 / 343;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        
+      }
+    }
+
+    .contact-info {
+      max-height: 80vh;
+      max-width: 74vw;
+    }
+
+    .contact-links {
+      & > * { width: 100%; }
+    }
+
+    form {
+      button { display: block; }
+
+      // @include bp(sm){
+      //   padding: 40px 32px 80px 40px;
+      // }
+
+      //  @include bp(md){
+      //   padding-left: 96px;
+      // }
+    }
+
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; 
+
+      & > * { width: 100%; }
+    }
+
+
+    input[type=text], textarea {
+      border-radius: 8px;
+      border: 1px solid #073913;
+      background: #FDFDFB;
+      padding: 8px 16px;
+
+      &::placeholder {
+        font-size: 14px;
+        line-height: 1.33;
+        color: $green;
+    
+        @include bp(sm) {
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    textarea {
+      border-radius: 10px;
+      min-height: 120px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      & > * { width: 100%; }
+      gap: 8px;
+
+      font-size: 14px;
+      line-height: 1.33;
+      color: $green-dark;
+
+      @include bp(sm){
+        flex-direction: row; 
+        font-size: 16px;
+        line-height: 1.5;
+        display: flex;
+        gap: 0;
+        overflow: hidden;
+
+        border-radius: 8px;
+        border: 1px solid #073913;
+        background: #FDFDFB;
+
+        input {
+          border: none;
+          background: transparent;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+
 

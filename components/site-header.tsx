@@ -79,7 +79,7 @@ export function SiteHeader({ settings }: { settings: Settings }) {
 
       {/* header */}
       <header className={`site-header w-full ${showMenu && 'menu-open'}`}>
-        <div className={`container ${showMenu ? 'bg-white' : 'backdrop-blur-md'}`}>
+        <div className={`container mx-auto ${showMenu ? 'bg-white' : 'backdrop-blur-md'}`}>
           <div className='header-content'>
             <div className="menu-button">
               <button onClick={toggleMenu}>

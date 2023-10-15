@@ -85,13 +85,15 @@ export default class BlogSlider extends Component<Props> {
                 style={{"backgroundColor": blog.color.hex}}
               >
                 {blog.image && (
-                  <Image
-                    src={blog.image}
-                    width={124}
-                    height={124}
-                    alt="Event Type Icon"
-                    className='mx-auto mb-12'
-                  />
+                  <div className="media-block w-32 h-32 mx-auto mb-12">
+                    <Image
+                      src={blog.image}
+                      width={124}
+                      height={124}
+                      alt="Event Type Icon"
+                      className='object-contain h-full'
+                    />
+                  </div>
                 )}
                 <h2 className="text-2xl sm:text-3xl xl:text-5xl">{blog.title}</h2>
                 <p className='mt-3 mb-4 sm:mb-6 sm:mt-4 flex gap-2 text-sm flex-wrap'>

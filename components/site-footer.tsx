@@ -72,7 +72,7 @@ export function SiteFooter({ settings }: { settings: Settings }) {
             <h6 className="text-lg">{settings.footerLogo.caption}</h6>
           </div>
 
-          <form>
+          <form className="default-form-style">
             <p className="text-sm">{settings.formCaption}</p>
             <div className='input-group'>
               <input type="text" name="firstname" id="firstname" placeholder="First Name" aria-label="First Name"/>

@@ -8,9 +8,9 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
+      <div className="modal-content px-4 py-10 sm:p-10" onClick={e => e.stopPropagation()}>
         {children}
-        <button className="close-modal" onClick={onClose}>
+        <button className="close-modal text-xs" onClick={onClose}>
           Close
         </button>
       </div>
@@ -33,8 +33,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
         .modal-content {
           position: relative;
           background: white;
-          padding: 20px;
-          max-width: 80%;
+          max-width: 1020px;
           max-height: 80%;
           overflow-y: auto;
           border-radius: 8px;
@@ -43,8 +42,8 @@ const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
 
         .close-modal {
           position: absolute;
-          right: 10px;
-          top: 10px;
+          right: 16px;
+          top: 16px;
           background: none;
           border: none;
           cursor: pointer;
