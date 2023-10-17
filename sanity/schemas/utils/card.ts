@@ -33,13 +33,5 @@ export default defineField({
       ],
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "cardBorder",
-      title: "Add border around card?",
-      type: "boolean",
-    }),
   ],
-  initialValue: {
-    cardBorder: true
-  }
 })

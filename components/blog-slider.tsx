@@ -10,7 +10,7 @@ const Slider = dynamic(() => import('react-slick'), {
 });
 
 interface Blog {
-  _id: string;
+  _key: string;
   image?: string;
   title: string;
   author: string;
@@ -77,7 +77,7 @@ export default class BlogSlider extends Component<Props> {
       <Slider {...settings}>
         {blogs.map((blog, index) => (
           <div 
-              key={`blog-` + blog._id} 
+              key={`blog-` + blog._key} 
               className="blog"
             >
               <div 

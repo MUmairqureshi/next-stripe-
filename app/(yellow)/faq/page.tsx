@@ -6,7 +6,7 @@ import { RichTextComponents } from "@/components/RichTextComponents";
 type BlockContent = any[];
 
 type FAQ = {
-  _id: string;
+  _key: string;
   question: string;
   answer: BlockContent;
 }
@@ -28,7 +28,7 @@ export default async function Page() {
       <div className='faq-wrapper mt-4 flex flex-col gap-4 sm:mt-6 md:mt-0'>
         {faqs.map(faq => (
           <div 
-            key={faq._id} 
+            key={faq._key} 
             className='faq rounded-2xl border border-dashed border-greenDark p-4 md:p-6'
           >
             <h5 className='mb-2'>{faq.question}</h5>

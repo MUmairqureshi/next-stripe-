@@ -12,6 +12,7 @@ export const about = defineType({
       of: [
         {type: 'module.callout'},
         {type: 'module.cards'},
+        {type: 'module.gallery'},
       ],
     }),
   ]

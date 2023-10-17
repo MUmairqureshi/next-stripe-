@@ -2,7 +2,7 @@ import {defineField} from 'sanity'
 
 export default defineField({
   name: 'module.callout',
-  title: 'Image + Text',
+  title: 'Callout',
   type: 'object',
   groups: [
     {
@@ -40,12 +40,6 @@ export default defineField({
       group: 'media',
     }),
     defineField({
-      name: "imageBorder",
-      title: "Add border around image?",
-      type: "boolean",
-      group: 'media',
-    }),
-    defineField({
       name: "textBlock",
       title: "Text Block",
       type: 'array',
@@ -60,16 +54,22 @@ export default defineField({
       ],
     }),
     defineField({
-      name: "sectionDirection",
-      title: "Desktop Direction",
-      description: "On desktop, should the image appear first?",
+      name: "imageFirst",
+      title: "Content Direction",
+      description: "Should the image appear first?",
       type: "boolean",
       group: 'settings',
     }),
-
+    defineField({
+      name: "tabletColumns",
+      title: "Tablet Columns",
+      description: "Should the content turn into columns on tablet? (Defaults to true)",
+      type: "boolean",
+      group: 'settings',
+    }),
   ],
   initialValue: {
-    imageBorder: true,
-    sectionDirection: true
+    imageFirst: true,
+    columnView: true,
   }
 })

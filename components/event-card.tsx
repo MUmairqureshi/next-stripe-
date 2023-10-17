@@ -15,7 +15,7 @@ type Tag = {
 }
 
 type SingleEvent = {
-  _id: string;
+  _key: string;
   date: string;
   tags?: Tag[];
   name: string;
@@ -54,7 +54,7 @@ export function EventCard({ events }: EventProps) {
         {events.map(event => (
           <div 
             className='event border-default card-md relative gap-6' 
-            key={event._id}
+            key={event._key}
             style={{"backgroundColor": event.color.hex}}
           >
             <div className='text-wrapper'>

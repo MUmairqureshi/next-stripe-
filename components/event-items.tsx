@@ -17,7 +17,7 @@ type Tag = {
 };
 
 type Event = {
-  _id: string;
+  _key: string;
   color: {
     hex: string;
   };
@@ -84,7 +84,7 @@ export default function EventItems({ events = [] }: Props) {
         {events.map(event => (
           <div 
             className='event border-default card-md relative gap-6 justify-between' 
-            key={event._id}
+            key={event._key}
             style={{"backgroundColor": event.color.hex}}
           >
           <div className="text-wrapper flex flex-col gap-6">

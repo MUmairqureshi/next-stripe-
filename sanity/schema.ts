@@ -28,8 +28,9 @@ const global = [ tags ]
 /*  modules */
 import calloutModule from './schemas/modules/callout-module'
 import cardsModule from './schemas/modules/cards-module'
+import galleryModule from './schemas/modules/gallery-module'
 
-const modules = [ calloutModule, cardsModule ]
+const modules = [ calloutModule, cardsModule, galleryModule ]
 
 /*  utils */
 import blockContent from './schemas/utils/blockContent'

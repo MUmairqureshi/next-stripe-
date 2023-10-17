@@ -8,13 +8,14 @@ export default defineField({
     defineField({
       name: "text",
       title: "Text",
+      description: "You must provide text and a link for it to show up on the page",
       type: "string",
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "url",
       title: "URL",
       type: "url",
+      description: "Make sure URL includes https://",
     }),
     defineField({
       title: 'Email',

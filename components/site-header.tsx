@@ -39,7 +39,7 @@ type Settings = {
     url: string;
     style: string;
     email?: string;
-    _id: string;
+    _key: string;
   }[];
 };
 
@@ -144,7 +144,7 @@ export function SiteHeader({ settings }: { settings: Settings }) {
                 <h2 id="mainmenulabel" className="sr-only">Main Menu</h2>
                 <ul>
                   {settings.menuLinks.map(item => (
-                    <li key={item._id}>
+                    <li key={item._key}>
                       <ButtonTwo text={item.text} url={item.url} email={item.email} variant='header' size='sm' />
                     </li>
                   ))}

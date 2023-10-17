@@ -24,7 +24,7 @@ type Settings = {
   footerFinePrint: string;
   footerTextBlock: string;
   footerLinkLists: {
-    _id: string;
+    _key: string;
     name: string;
     url: ButtonProps[];
   }[];
@@ -95,11 +95,11 @@ export function SiteFooter({ settings }: { settings: Settings }) {
 
           <nav className={`link-lists gap-4 sm:gap-8 ${dynamicClassName}`} aria-labelledby="footerMenu">
             {settings.footerLinkLists.map(list => (
-              <ul className="footer-link-list" key={list._id}>
+              <ul className="footer-link-list" key={list._key}>
                 <h6 id="footerMenu" className='text-lg text-black'>{list.name}</h6>
                   {
                     list.url.map((button, i) => (
-                      <li key={`${list._id}-${i}`}>
+                      <li key={`${list._key}-${i}`}>
                         <ButtonTwo 
                           text={button.text} 
                           url={button.url} 

@@ -14,11 +14,11 @@ export default defineField({
     defineField({
       name: "title",
       title: "Regular Title",
-      description: "This text will not be inside of the plane banner :(",
+      description: "The flying title will trump this one, choose wisely.",
       type: "string",
     }),
     defineField({
-      name: "carousel",
+      name: "isCarousel",
       title: "Carousel",
       description: "Should this be a carousel?",
       type: "boolean",
@@ -37,6 +37,6 @@ export default defineField({
     }),
   ],
   initialValue: {
-    carousel: true
+    isCarousel: true
   }
 })
