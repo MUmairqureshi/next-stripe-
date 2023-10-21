@@ -22,8 +22,11 @@ const singletons = [ about, settings ]
 
 /*  global */
 import { tags } from "./schemas/global/tags-schema"
+import { productCategory } from "./schemas/global/categories-schema"
+import { productSizes } from "./schemas/global/sizes-schema"
+import { productColors } from "./schemas/global/colors-schema"
 
-const global = [ tags ]
+const global = [ tags, productCategory, productSizes, productColors ]
 
 /*  modules */
 import calloutModule from './schemas/modules/callout-module'

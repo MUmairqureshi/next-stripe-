@@ -47,5 +47,11 @@ export const blogs = defineType({
       type: "blockContent",
       validation: (Rule) => Rule.required(),
     }),
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'date'
+    }
+  }
 })

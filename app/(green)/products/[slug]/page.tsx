@@ -1,9 +1,12 @@
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
-
 import { SanityProduct } from "@/config/inventory"
-import { ProductGallery } from "@/components/product-gallery"
+import ProductGallery from "@/components/product-gallery"
 import { ProductInfo } from "@/components/product-info"
+import FeaturedProducts from "@/components/featured-products"
+import "@/styles/components/slick.css"
+import "@/styles/components/slick-theme.css"
+import "@/styles/pages/product.scss"
 
 interface Props {
   params: {
@@ -12,8 +15,10 @@ interface Props {
 }
 
 export default async function Page({ params }: Props) {
-  const product = await client.fetch<SanityProduct>(
+
+  const product = await client.fetch (
     groq`*[_type == "product" && slug.current == "${params.slug}"][0] {
+      ...,
       _id,
       _createdAt,
       "id": _id,
@@ -23,23 +28,47 @@ export default async function Page({ params }: Props) {
       price,
       currency,
       description,
-      sizes,
-      categories,
-      colors,
-      "slug": slug.current
+      "slug": slug.current,
+      tags[]->,
+      categories[]->,
+      colors[]->,
+      sizes[]->,
     }`
   )
 
+  const products = await client.fetch(
+    groq`*[_type == "product"] {
+      _id,
+      _createdAt,
+      name,
+      sku,
+      images,
+      currency,
+      price,
+      description,
+      "slug": slug.current,
+      tags[]->,
+      categories[]->,
+      colors[]->,
+    }`
+  )
+
+  console.log(products)
+
 
   return (
-    <main className="mx-auto max-w-5xl sm:px-6 sm:pt-16 lg:px-8">
-      <div className="mx-auto max-w-2xl lg:max-w-none">
-        {/* Product */}
-        <div className="pb-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12">
+    <main className='product-page'>
+      <section className="product-section">
+        <div className="container">
           <ProductGallery product={product} />
           <ProductInfo product={product}/>
         </div>
-      </div>
+      </section>
+      <section className="featured-products">
+        <div className="container">
+          <FeaturedProducts products={products} />
+        </div>
+      </section>
     </main>
   )
 }

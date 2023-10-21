@@ -71,5 +71,16 @@ export default defineField({
   initialValue: {
     imageFirst: true,
     columnView: true,
+  },
+  preview: {
+    select: {
+      title: 'textBlock.title',
+    },
+    prepare(selection) {
+      const {title} = selection
+      return {
+        title: `Callout Section`
+      }
+    }
   }
 })

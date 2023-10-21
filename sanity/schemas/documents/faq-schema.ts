@@ -17,5 +17,10 @@ export const faq = defineType({
       type: "blockContent",
       validation: (Rule) => Rule.required(),
     }),
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'question'
+    }
+  }
 })

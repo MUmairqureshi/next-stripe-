@@ -25,5 +25,16 @@ export default defineField({
         ],
       }],
     }),
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'flyingTitle',
+    },
+    prepare(selection) {
+      const {title} = selection
+      return {
+        title: `Gallery Section`
+      }
+    }
+  }
 })

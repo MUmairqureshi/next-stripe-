@@ -59,7 +59,7 @@ export function SiteHeader({ settings }: { settings: Settings }) {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const searchQuery = formData.get("search")
-    router.replace(`/shop/?search=${searchQuery}`)
+    router.replace(`/products/?search=${searchQuery}`)
   }
 
   return (

@@ -1,5 +1,4 @@
 import Link from "next/link"
-
 import { stripe } from "@/lib/stripe"
 import { CheckoutSession } from "@/components/checkout-session"
 

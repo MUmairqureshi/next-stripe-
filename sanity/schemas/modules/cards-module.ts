@@ -38,5 +38,16 @@ export default defineField({
   ],
   initialValue: {
     isCarousel: true
+  },
+  preview: {
+    select: {
+      title: 'flyingTitle',
+    },
+    prepare(selection) {
+      const {title} = selection
+      return {
+        title: `Cards Section`
+      }
+    }
   }
 })

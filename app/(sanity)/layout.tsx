@@ -1,5 +1,4 @@
 import "@/styles/tailwind.css"
-import "@/styles/main.scss"
 import { Metadata } from "next"
 import { siteConfig } from "@/config/site"
 import { fontMono } from "@/lib/fonts"

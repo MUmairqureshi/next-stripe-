@@ -161,7 +161,7 @@ export const settings = defineType({
       title: "Contact Information",
       type: "blockContent",
       group: 'contact',
-      validation: (Rule) => Rule.required().max(2)
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "contactLinks",

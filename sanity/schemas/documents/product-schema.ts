@@ -10,48 +10,18 @@ export const product = defineType({
       title: "Name",
       type: "string"
     }),
-    {
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
       options: {
         source: "name"
       }
-    },
-    {
-      name: "images",
-      title: "Images",
-      type: "array",
-      of: [{ type: 'image' }]
-    },
-    {
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: 'string' }]
-    },
-    defineField({
-      name: "tags",
-      title: "Product Tags",
-      type: "array",
-      of: [{ type: 'tags' }]
     }),
-    {
-      name: "sizes",
-      title: "Sizes",
-      type: "array",
-      of: [{ type: 'string' }]
-    },
-    {
-      name: "colors",
-      title: "Colors",
-      type: "array",
-      of: [{ type: 'string' }]
-    },
     {
       name: 'description',
       title: "Description",
-      type: 'string'
+      type: 'text'
     },
     {
       name: 'sku',
@@ -59,14 +29,50 @@ export const product = defineType({
       type: 'string'
     },
     {
-      name: 'currency',
-      title: "Currency",
-      type: 'string'
+      name: 'price',
+      title: "Price (USD)",
+      type: 'number'
     },
     {
-      name: 'price',
-      title: "Price",
+      name: 'inventory',
+      title: "Available Inventory",
       type: 'number'
-    }
-  ]
+    },
+    defineField({
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [{ type: 'image' }]
+    }),
+    defineField({
+      name: "categories",
+      title: "Collections",
+      type: "array",
+      of: [{type: 'reference', to: {type: 'productCategory'}}],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "tags",
+      title: "Product Tags",
+      type: "array",
+      of: [{type: 'reference', to: {type: 'tags'}}],
+    }),
+    defineField({
+      name: "sizes",
+      title: "Available Sizes",
+      type: "array",
+       of: [{type: 'reference', to: {type: 'productSizes'}}],
+    }),
+    defineField({
+      name: "colors",
+      title: "Available Colors",
+      type: "array",
+       of: [{type: 'reference', to: {type: 'productColors'}}],
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+  }
 })

@@ -67,5 +67,11 @@ export const events = defineType({
       type: "text",
       validation: (Rule) => Rule.required(),
     }),
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'date'
+    }
+  }
 })

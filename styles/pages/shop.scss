@@ -1,0 +1,49 @@
+@import "../main.scss";
+@import "../inputs/product-card.scss";
+
+.products-wrapper {
+  padding: 40px 0;
+
+  .container {
+    padding: 0 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @include bp(sm){
+      gap: 0;
+      padding: 0 32px;
+    }
+
+    @include bp(lg){
+      padding: 0 64px;
+    }
+  }
+
+}
+
+.product-categories {
+  display: flex;
+  overflow: scroll;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.category-btn {
+  display: flex;
+  padding: 8px 24px 8px 8px;
+  align-items: center;
+  gap: 12px;
+  border-radius: 16px;
+  background: #FDFDFB;
+  box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    box-shadow: none;
+    transform: translate(-4px, 4px)
+  }
+}

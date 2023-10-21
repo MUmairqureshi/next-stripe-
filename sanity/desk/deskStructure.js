@@ -11,6 +11,24 @@ export const structure = (S) =>
           S.documentTypeList('product')
           .defaultOrdering([{field: 'name', direction: 'asc'}])
         ),
+      S.listItem()
+      .title('Collections')
+      .schemaType('productCategory')
+      .child(
+        S.documentTypeList('productCategory')
+      ),
+      S.listItem()
+      .title('Sizes')
+      .schemaType('productSizes')
+      .child(
+        S.documentTypeList('productSizes')
+      ),
+      S.listItem()
+      .title('Colors')
+      .schemaType('productColors')
+      .child(
+        S.documentTypeList('productColors')
+      ),
       S.divider(),
       S.listItem()
         .title('About')

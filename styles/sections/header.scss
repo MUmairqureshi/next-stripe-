@@ -15,6 +15,14 @@
     align-items: center;
   }
 
+  .icons-wrapper { align-items: center; }
+
+    button {
+      img:hover {
+        transform: rotate(2px);
+      }
+    }
+
   &.menu-open {
     .container {
       display: flex;
@@ -24,7 +32,6 @@
     }
 
     nav {
-
       ul {
         display: flex;
         flex-wrap: wrap;

@@ -24,5 +24,10 @@ export const pages = defineType({
       type: "blockContent",
       validation: (Rule) => Rule.required(),
     }),
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+    }
+  }
 })
