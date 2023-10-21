@@ -1,0 +1,73 @@
+@import "./global/base";
+@import "./global/mixins";
+@import "./global/utils";
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  transition: opacity 0.25s;
+}
+
+main {
+  animation: fadeIn 1s 1s both;
+}
+
+// html {
+//   background: linear-gradient(0deg, #D8CEA2 50%, #F1C14B 85%);
+// }
+
+.background {
+  background: linear-gradient(0deg, #D8CEA2 50%, #F1C14B 85%);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body {
+  height: 8000px;
+  // height: 100vh;
+  width: 100vw;
+  background: linear-gradient(0deg, #D8CEA2 50%, #F1C14B 85%);
+  position: relative;
+}
+
+section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &.intro {
+    width: 100vw;
+    height: 100vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &.scene {
+    img, svg {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      height: 100vh;
+      width: 354vh;
+      max-width: none;
+    }
+  }
+}
