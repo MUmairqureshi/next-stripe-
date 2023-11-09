@@ -22,7 +22,7 @@ type TextBlockType = {
     text: string;
     email: string;
     url: string;
-    style: "default" | "destructive" | "outline" | "ghost" | "primary" | "secondary" | "link" | "header" | "footer";
+    style: "default" | "destructive" | "text" | "ghost" | "primary" | "secondary" | "link" | "header" | "footer";
   };
 }
 
@@ -47,7 +47,7 @@ type CalloutModuleProps = {
 
 function CalloutModule({ module }: CalloutModuleProps) {
   return (
-    <section className='callout-section'>
+    <section className='callout-section page-section'>
       <div className={`container flex gap-6 md:gap-10 ${module.imageFirst ? 'flex-col' : 'flex-col-reverse'} ${module.tabletColumns ? 'md:grid md:grid-cols-2 md:items-center' : 'lg:grid lg:grid-cols-2 lg:items-center'}`}>
         <div className='media-block'>
           <Image
@@ -64,7 +64,7 @@ function CalloutModule({ module }: CalloutModuleProps) {
             <div 
               key={block._key} // Assuming that either title or subtitle is unique, you may want to provide a more appropriate key
               className='text-block'
-              style={{ backgroundColor: `rgba(${block.color.rgb.r}, ${block.color.rgb.g}, ${block.color.rgb.b}, 0.7)` }}
+              style={{ backgroundColor: `rgba(${block.color.rgb.r}, ${block.color.rgb.g}, ${block.color.rgb.b}, 0.5)` }}
             >
               {block.title && <h4>{block.title}</h4>}
               {block.subtitle && <h5>{block.subtitle}</h5>}

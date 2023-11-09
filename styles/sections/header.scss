@@ -6,7 +6,14 @@
     overflow: hidden;
     padding: 8px 16px;
     max-width: 1536px;
-    background: rgba(253, 253, 251, 0.10);
+  }
+
+  // &.menu-open {
+  //   .container { padding-bottom: 24px; }
+  // }
+
+  &:not(.menu-open) {
+    .container { background: rgba(253, 253, 251, 0.10); }
   }
 
   .header-content {
@@ -29,6 +36,9 @@
       flex-direction: column;
       gap: 16px;
       border-radius: 16px;
+      padding: 16px;
+
+      @include bp(md){ padding: 16px 24px; }
     }
 
     nav {
@@ -37,7 +47,10 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        gap: 4px;
+        gap: 12px;
+
+        @include bp(sm){ gap: 16px; }
+        @include bp(lg){ gap: 24px; }
       }
     }
   }

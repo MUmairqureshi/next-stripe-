@@ -53,7 +53,7 @@ export function ProductInfo({ product }: Props) {
     description: "Product added to cart",
     action: (
       <Link href="/">
-        <Button variant="link" className="gap-x-2 whitespace-nowrap">
+        <Button variant="text" className="gap-x-2 whitespace-nowrap">
           <span>Open cart</span>
           <ArrowRight className="h-5 w-5"/>
         </Button>

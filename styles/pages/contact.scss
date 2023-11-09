@@ -1,0 +1,254 @@
+@import "../main.scss";
+@import "../themes/default-theme.scss";
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 12px);
+  }
+
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden; 
+}
+
+.cloud {
+  position: absolute;
+  z-index: -1;
+  animation-name: floating;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  &-1 {
+    left: 5px;
+    top: 80px;
+  }
+
+  &-2 {
+    animation-delay: 250ms;
+    right: 5px;
+    top: 200px;
+  }
+
+  &-3 {
+    animation-delay: 320mss;
+    left: 20%;
+    top: 400px;
+  }
+
+  &-4 {
+    animation-delay: 600ms;
+    left: 40%;
+    bottom: 1000px;
+  }
+}
+
+.contact-page {
+  .contact-section {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .container {
+      margin: 0 auto;
+      text-align: center;
+
+      @include bp(md) {
+        background-image: url('/backgrounds/notebook.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 32px;
+
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        
+
+        gap: 144px;
+        width: 90vw;
+        height: 62vw;
+
+        &>* {
+          width: 100%;
+        }
+      }
+
+      @include bp(lg) {
+        gap: 220px;
+      }
+
+      @include bp(xl) {
+        width: 70vw;
+        height: 49vw;
+        gap: 208px;
+      }
+
+      @include bp(2xl) {
+        gap: 304px;
+        padding: 48px;
+        width: 100%;
+        height: 896px;
+      }
+    }
+
+    .contact-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      
+      background-image: url('/backgrounds/notecard.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      padding: 48px 16px 16px;
+      aspect-ratio: 423 / 343;
+
+      p {
+        font-size: 16px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-size: 20px;
+      }
+
+      h4,
+      h5,
+      h6 {
+        font-size: 18px;
+      }
+
+      @include bp(md) {
+        margin-top: 0;
+      }
+    }
+
+    .contact-info {
+      @include bp(md){
+        max-height: 80vh;
+        max-width: 74vw;
+      }
+    }
+
+    .contact-links {
+      &>* {
+        width: 100%;
+      }
+    }
+
+    form {
+      button {
+        display: block;
+        background: $green-dark;
+        color: $white;
+        padding: 8px 24px;
+    
+        font-size: 14px;
+        line-height: 1.33;
+        border-radius: 8px;
+        border: 1px solid #073913;
+        padding: 8px 16px;
+
+        @media (hover: hover) {
+          &:hover {
+            background: $green-light;
+            color: $green-dark;
+          }
+        }
+    
+        @include bp(md) {
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &>* {
+        width: 100%;
+      }
+    }
+
+
+    input[type=text],
+    textarea {
+      border-radius: 8px;
+      border: 1px solid #073913;
+      background: #FDFDFB;
+      padding: 8px 16px;
+
+      &::placeholder {
+        font-size: 14px;
+        line-height: 1.33;
+        color: $green;
+
+        @include bp(md) {
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    textarea {
+      border-radius: 10px;
+      min-height: 120px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+
+      &>* {
+        width: 100%;
+      }
+
+      gap: 8px;
+
+      font-size: 14px;
+      line-height: 1.33;
+      color: $green-dark;
+
+      @include bp(md) {
+        flex-direction: row;
+        font-size: 16px;
+        line-height: 1.5;
+        display: flex;
+        gap: 0;
+        overflow: hidden;
+
+        border-radius: 8px;
+        border: 1px solid #073913;
+        background: #FDFDFB;
+
+        input {
+          border: none;
+          background: transparent;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

@@ -145,7 +145,7 @@ export function SiteHeader({ settings }: { settings: Settings }) {
                 <ul>
                   {settings.menuLinks.map(item => (
                     <li key={item._key}>
-                      <ButtonTwo text={item.text} url={item.url} email={item.email} variant='header' size='sm' />
+                      <ButtonTwo text={item.text} url={item.url} email={item.email} variant='text' size='sm' />
                     </li>
                   ))}
                 </ul>

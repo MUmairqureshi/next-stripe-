@@ -53,10 +53,14 @@ section {
     width: 100vw;
     height: 100vh;
 
-    img {
+    img { z-index: 2; }
+    svg { z-index: 1; }
+
+    img, svg {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      position: absolute;
     }
   }
 
@@ -69,5 +73,15 @@ section {
       width: 354vh;
       max-width: none;
     }
+
+    // a {
+    //   opacity: 100%;
+
+    //   & ~ a { opacity: 100%; }
+
+    //   &:hover {
+    //     & ~ a { opacity: 30%; }
+    //   }
+    // }
   }
 }

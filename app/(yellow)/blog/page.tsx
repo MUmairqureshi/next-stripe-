@@ -3,6 +3,8 @@ import { groq } from "next-sanity"
 import BlogSlider from "@/components/blog-slider"
 import "@/styles/components/slick.css"
 import "@/styles/components/slick-theme.css"
+import "@/styles/pages/blog.scss"
+
 
 export default async function Page() {
   const query = groq`

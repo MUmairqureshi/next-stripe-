@@ -1,0 +1,40 @@
+@import "../main.scss";
+@import "../themes/default-theme.scss";
+
+.blogs-page {
+  .blog {
+    max-height: calc(100vh - 180px);
+    overflow: scroll;
+  }
+
+  .slick-slider .slick-slide:nth-child(5n+1)>div {
+    h2 {
+      font-family: $font-abc;
+    }
+  }
+
+  .slick-slider .slick-slide:nth-child(5n+2)>div {
+    h2 {
+      font-family: $font-matinee;
+    }
+  }
+
+  .slick-slider .slick-slide:nth-child(5n+3)>div {
+    h2 {
+      font-family: $font-change;
+      letter-spacing: 2px;
+    }
+  }
+
+  .slick-slider .slick-slide:nth-child(5n+4)>div {
+    h2 {
+      font-family: $font-gallique;
+    }
+  }
+
+  .slick-slider .slick-slide:nth-child(5n+5)>div {
+    h2 {
+      font-family: $font-helve;
+    }
+  }
+}
