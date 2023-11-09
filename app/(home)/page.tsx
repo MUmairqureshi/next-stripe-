@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import HomeScene from "@/components/ui/home-scene"
 import HomeIntroClouds from "@/components/ui/home-intro"
+import HomePost from "@/components/ui/home-post"
 
 export default async function Page() {
   return (
     <>
-      <section className="intro">
+      <section className="intro desktop">
         <HomeIntroClouds/>
         <Image
           src="/home/intro.svg"
@@ -16,7 +17,7 @@ export default async function Page() {
           id='intro-img'
         />
       </section>
-      <section className="scene">
+      <section className="scene desktop">
         <Image
           src="/home/mountains-back.svg"
           alt="mountains"
@@ -43,20 +44,28 @@ export default async function Page() {
           className='hills img'
           id='hills'
         />
-        
-        {/* <Image
-          src="/home/scene.svg"
-          alt="hike clerb girls hiking"
-          width={3063}
-          height={984}
-          className='hike-clerb img'
-          id='hike-clerb'
-        /> */}
-
         <HomeScene/>
       </section>
-
-      <div className="background"></div>
+      <div className="background desktop"></div>
+      <section className="mobile mobile-view">
+        <div className="container">
+          <Image
+            src="/home/home-badge.png"
+            alt="hike clerb badge"
+            width={200}
+            height={210}
+            className='badge-img'
+          />
+          <HomePost/>
+          {/* <Image
+            src="/home/home-post.svg"
+            alt="hike clerb badge"
+            width={230}
+            height={520}
+            className='post-img'
+          /> */}
+        </div>
+      </section>
     </>
   );
 }
