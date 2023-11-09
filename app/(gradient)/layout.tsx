@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: {
     icon: '/favicon.ico'
+  },
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: '<https://www.hikeclerb.com>',
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: '/card.jpg',
+        width: 1200,
+        height: 600,
+      }
+    ]
   }
 }
 
