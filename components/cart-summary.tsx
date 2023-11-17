@@ -22,10 +22,13 @@ export function CartSummary() {
     })
 
     const data = await response.json()
-    const result = await redirectToCheckout(data.id)
-    if (result?.error) {
-      console.error(result)
-    }
+    console.log(data);
+    
+    window.location.assign(data.url)
+    // const result = await redirectToCheckout(data.id)
+    // if (result?.error) {
+    //   console.error(result)
+    // }
     setLoading(false)
   }
 
