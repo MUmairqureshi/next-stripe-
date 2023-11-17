@@ -19,8 +19,8 @@ export function CartItems() {
   const cartItems = Object.entries(cartDetails!).map(([_, product]) => product)
   const { toast } = useToast()
 
-  function removeCartItem(product: Product) {
-    removeItem(product._id)
+  function removeCartItem(product:any) {
+    removeItem(`${product._id}-${product.product_data?.size}-${product.product_data?.color}`)
     toast({
       title: `${product.name} removed`,
       description: "Product removed from cart",
@@ -62,7 +62,11 @@ export function CartItems() {
                 <p className="mt-1 text-sm font-medium">{formatCurrencyString({ value: product.price, currency: "USD"})}</p>
                 <p className="mt-1 text-sm font-medium">
                   Size: {/* @ts-ignore */}
-                  <strong>{getSizeName(product.product_data?.size)}</strong>
+                  <strong>{product.product_data?.size}</strong>
+                </p>
+                <p className="mt-1 text-sm font-medium">
+                  Color: {/* @ts-ignore */}
+                  <strong>{product.product_data?.color}</strong>
                 </p>
               </div>
 

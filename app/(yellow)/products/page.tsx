@@ -20,8 +20,8 @@ interface Props {
   }
 }
 
-export default async function Page({searchParams}: Props) {
-  const { date = "desc", price, color, category, size, search} = searchParams
+export default async function Page({ searchParams }: Props) {
+  const { date = "desc", price, color, category, size, search } = searchParams
   const priceOrder = searchParams.price ? `| order(price ${price})` : ''
   const dateOrder = searchParams.date ? `| order(_createdAt ${date})` : ''
   const order = `${priceOrder}${dateOrder}`
@@ -33,22 +33,22 @@ export default async function Page({searchParams}: Props) {
   const searchFilter = search ? `&& name match "${search}"` : ""
   const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}]`
 
-//  const products = await client.fetch<SanityProduct[]>(
-//     groq`${filter} ${order} {
-//       _id,
-//       _createdAt,
-//       name,
-//       sku,
-//       images,
-//       currency,
-//       price,
-//       description,
-//       "slug": slug.current,
-//        tags[]->,
-//        categories[]->,
-//        colors[]->,
-//     }`
-//   )
+  //  const products = await client.fetch<SanityProduct[]>(
+  //     groq`${filter} ${order} {
+  //       _id,
+  //       _createdAt,
+  //       name,
+  //       sku,
+  //       images,
+  //       currency,
+  //       price,
+  //       description,
+  //       "slug": slug.current,
+  //        tags[]->,
+  //        categories[]->,
+  //        colors[]->,
+  //     }`
+  //   )
 
   const products = await client.fetch(
     groq`*[_type == "product"] {
@@ -60,6 +60,7 @@ export default async function Page({searchParams}: Props) {
       currency,
       price,
       description,
+      inventory,
       "slug": slug.current,
       tags[]->,
       categories[]->,
@@ -67,7 +68,7 @@ export default async function Page({searchParams}: Props) {
     }`
   )
 
-  // console.log(products)
+  // console.log("products ===>>> ", products)
 
   const categories = await client.fetch(
     groq`*[_type=='productCategory']{
@@ -84,7 +85,7 @@ export default async function Page({searchParams}: Props) {
       {/* <ProductSort/> */}
       {/* <ProductFilters/> */}
       <ProductCategories categories={categories} products={products} />
-      <ProductGrid products={products}/>
+      <ProductGrid products={products} />
     </div>
   )
 }

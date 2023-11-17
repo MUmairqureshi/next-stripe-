@@ -48,26 +48,55 @@ export const product = defineType({
       name: "categories",
       title: "Collections",
       type: "array",
-      of: [{type: 'reference', to: {type: 'productCategory'}}],
+      of: [{ type: 'reference', to: { type: 'productCategory' } }],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "tags",
       title: "Product Tags",
       type: "array",
-      of: [{type: 'reference', to: {type: 'tags'}}],
+      of: [{ type: 'reference', to: { type: 'tags' } }],
+    }),
+    defineField({
+      name: 'i_inventory',
+      title: "Add Inventory",
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'size',
+              title: 'Enter Size',
+              type: 'string',
+              // to: { type: 'productSizes' }
+            },
+            {
+              name: 'color',
+              title: 'Enter Color',
+              type: 'string',
+              // to: { type: 'productColors' }
+            },
+            {
+              name: 'quantity',
+              title: 'Enter Quantity',
+              type: 'number'
+            }
+          ],
+        }
+      ]
     }),
     defineField({
       name: "sizes",
       title: "Available Sizes",
       type: "array",
-       of: [{type: 'reference', to: {type: 'productSizes'}}],
+      of: [{ type: 'reference', to: { type: 'productSizes' } }],
     }),
     defineField({
       name: "colors",
       title: "Available Colors",
       type: "array",
-       of: [{type: 'reference', to: {type: 'productColors'}}],
+      of: [{ type: 'reference', to: { type: 'productColors' } }],
     }),
   ],
   preview: {

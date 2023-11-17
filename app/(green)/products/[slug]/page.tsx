@@ -28,6 +28,8 @@ export default async function Page({ params }: Props) {
       price,
       currency,
       description,
+      inventory,
+      i_inventory[],
       "slug": slug.current,
       tags[]->,
       categories[]->,
@@ -53,7 +55,7 @@ export default async function Page({ params }: Props) {
     }`
   )
 
-  console.log(products)
+  console.log("product ===>>> ", product)
 
 
   return (
