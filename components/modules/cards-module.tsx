@@ -15,20 +15,16 @@ interface CardProps {
 
 interface CardsModuleProps {
   module: {
-    flyingTitle?: string;
     title?: string;
     cards?: CardProps[];
   };
 }
 
 function CardsModule({ module }: CardsModuleProps) {
-  console.log(module);
-
   return (
-    <section className='cards-section'>
+    <section className='cards-section page-section'>
       <div className="container">
-        {module.flyingTitle}
-        {module.title}
+        <h3>{module.title}</h3>
         <div className='cards-wrapper'>
           {module.cards?.map(card => (
             <div className="card">

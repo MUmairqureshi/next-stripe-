@@ -28,7 +28,7 @@ export default defineField({
   ],
   preview: {
     select: {
-      title: 'flyingTitle',
+      title: 'Title',
     },
     prepare(selection) {
       const {title} = selection

@@ -28,12 +28,13 @@ const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
           align-items: center;
           background-color: rgba(0, 0, 0, 0.7);
           z-index: 1000;
+          padding: 16px;
         }
 
         .modal-content {
           position: relative;
           background: white;
-          max-width: 1020px;
+          max-width: 768px;
           max-height: 80%;
           overflow-y: auto;
           border-radius: 8px;

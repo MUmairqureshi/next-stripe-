@@ -112,6 +112,21 @@ export function ProductInfo({ product }: Props) {
       )
     })
   }
+ // OLD CODE FROM BEFORE MERGE CONFLICT RESOLUTION
+ // isInCart ? incrementItem(item._id) : addItem(item)
+ // toast({
+ //   title: `${item.name} (${getSizeName(selectedSize.size)})`, // Adjusted this line
+ //   description: "Product added to cart",
+ //   action: (
+ //     <Link href="/">
+ //       <Button variant="text" className="gap-x-2 whitespace-nowrap">
+ //        <span>Open cart</span>
+ //         <ArrowRight className="h-5 w-5"/>
+ //       </Button>
+ //     </Link>
+ //   )
+//  })
+//}
 
 
   return (

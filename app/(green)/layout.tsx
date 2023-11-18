@@ -1,5 +1,5 @@
 import "@/styles/tailwind.css"
-import "@/styles/main.scss"
+// import "@/styles/main.scss"
 import { Metadata } from "next"
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
@@ -16,6 +16,19 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: {
     icon: '/favicon.ico'
+  },
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: '<https://www.hikeclerb.com>',
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: '/card.jpg',
+        width: 1200,
+        height: 600,
+      }
+    ]
   }
 }
 

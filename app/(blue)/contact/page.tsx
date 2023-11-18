@@ -4,11 +4,13 @@ import { PortableText } from '@portabletext/react';
 import { RichTextComponents } from "@/components/RichTextComponents";
 import { Button, ButtonTwo } from "@/components/ui/buttons";
 
+import "@/styles/pages/contact.scss"
+
 type Link = {
   _key: string;
   url: string;
   text: string;
-  style:  "default" | "destructive" | "outline" | "ghost" | "primary" | "secondary" | "link" | "header" | "footer";
+  style:  "default" | "destructive" | "text" | "ghost" | "primary" | "secondary" | "link" | "header" | "footer";
   email: string;
 };
 
@@ -27,7 +29,7 @@ export default async function Page() {
       <section className="contact-section default-padding">
         <div className="container">
           <form className="default-form-style">
-            <h2 className='text-center '>{settings.contactFormTitle}</h2>
+            <h3 className='text-center'>{settings.contactFormTitle}</h3>
             <div className='input-wrapper mt-6 md:mt-10'>
               <div className='input-group'>
                 <input type="text" name="firstname" id="firstname" placeholder="First Name" aria-label="First Name"/>

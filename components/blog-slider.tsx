@@ -50,15 +50,21 @@ export default class BlogSlider extends Component<Props> {
       slidesToScroll: 1,
       responsive: [
         {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: 3.2,
+          }
+        },
+        {
           breakpoint: 1023,
           settings: {
-            slidesToShow: 3.5,
+            slidesToShow: 2.6,
           }
         },
         {
           breakpoint: 767,
           settings: {
-            slidesToShow: 2.3,
+            slidesToShow: 1.2,
           }
         },
         {
@@ -84,9 +90,10 @@ export default class BlogSlider extends Component<Props> {
               <div 
                 className={`container px-4 py-8 sm:px-6 ${index % 2 !== 0 ? 'bg-paper-1' : 'bg-paper-2'}`}
                 style={{"backgroundColor": blog.color.hex}}
+                // style={{backgroundColor: `rgba(${blog.color.rgb.r}, ${blog.color.rgb.g}, ${blog.color.rgb.b}, 0.7)`}}
               >
                 {blog.image && (
-                  <div className="media-block mx-auto mb-12 h-32 w-32">
+                  <div className="media-blog mx-auto mb-12 h-32 w-32">
                     <Image
                       src={blog.image}
                       width={124}
@@ -96,7 +103,7 @@ export default class BlogSlider extends Component<Props> {
                     />
                   </div>
                 )}
-                <h2 className="text-2xl sm:text-3xl xl:text-5xl">{blog.title}</h2>
+                <h2 className="blog-title line-clamp-4 lg:line-clamp-3">{blog.title}</h2>
                 <p className='mb-4 mt-3 flex flex-wrap gap-2 text-sm sm:mb-6 sm:mt-4'>
                   {blog.author}
                   <Image
