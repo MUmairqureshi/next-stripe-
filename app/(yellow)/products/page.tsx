@@ -1,4 +1,3 @@
-import "@/styles/pages/shop.scss"
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
 import { SanityProduct } from "@/config/inventory"
@@ -8,6 +7,7 @@ import { ProductFilters } from "@/components/product-filters"
 import { ProductGrid } from "@/components/product-grid"
 import { ProductSort } from "@/components/product-sort"
 import ProductCategories from "@/components/product-categories"
+import "@/styles/pages/shop.scss"
 
 interface Props {
   searchParams: {
@@ -77,7 +77,6 @@ export default async function Page({ searchParams }: Props) {
     `
   )
 
-  // console.log(categories)
 
   return (
     <div className='bg-paper-3'>
@@ -85,7 +84,7 @@ export default async function Page({ searchParams }: Props) {
       {/* <ProductSort/> */}
       {/* <ProductFilters/> */}
       <ProductCategories categories={categories} products={products} />
-      <ProductGrid products={products} />
+      <ProductGrid products={products}/>
     </div>
   )
 }

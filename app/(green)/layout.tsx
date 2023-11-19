@@ -1,5 +1,5 @@
 import "@/styles/tailwind.css"
-import "@/styles/main.scss"
+// import "@/styles/main.scss"
 import { Metadata } from "next"
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"

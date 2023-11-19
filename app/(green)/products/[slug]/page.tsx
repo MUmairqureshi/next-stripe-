@@ -60,14 +60,15 @@ export default async function Page({ params }: Props) {
 
   return (
     <main className='product-page'>
-      <section className="product-section">
+      <section className="product-section page-section">
         <div className="container">
           <ProductGallery product={product} />
           <ProductInfo product={product}/>
         </div>
       </section>
-      <section className="featured-products">
+      <section className="featured-products page-section">
         <div className="container">
+          <h3>Get ready to explore the great outdoors!</h3>
           <FeaturedProducts products={products} />
         </div>
       </section>

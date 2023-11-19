@@ -84,7 +84,7 @@ $screen-xxl-min: 1536px !default;
     }
   }
 
-  @else if $screenWidth==xxl {
+  @else if $screenWidth==2xl {
     @media (min-width: #{$screen-xxl-min}) {
       @content;
     }

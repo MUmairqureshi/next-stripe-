@@ -111,7 +111,7 @@
   }
   
   body {
-    @apply bg-background text-green text-base sm:text-lg;
+    @apply bg-background text-black text-base sm:text-lg;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
