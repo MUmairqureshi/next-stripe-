@@ -1,10 +1,11 @@
 import { CartItems } from "@/components/cart-items"
 import { CartSummary } from "@/components/cart-summary"
+import "@/styles/pages/cart.scss"
 
 export default function Page() {
   return (
-    <div>
-      <main className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
+    <section className="cart-section page-section">
+      <div className="container">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Shopping Cart
         </h1>
@@ -18,7 +19,7 @@ export default function Page() {
           </section>
           <CartSummary/>
         </form>
-      </main>
-    </div>
+      </div>
+    </section>
   )
 }

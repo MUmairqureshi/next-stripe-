@@ -1,0 +1,165 @@
+@import "../main.scss";
+@import "../components/slick.css";
+@import "../components/slick-theme.css";
+@import "../themes/default-theme.scss";
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 12px); }
+  100%   { transform: translate(0, 0px); }    
+}
+
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body { 
+  position: relative;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.cloud {
+  position: absolute;
+  z-index: -1;
+  animation-name: floating;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  &-1 {
+    left: 10%;
+    top: 300px;
+  }
+
+  &-2 {
+    animation-delay: 250ms;
+    left: 30%;
+    top: 40%;
+    
+  }
+
+  &-3 {
+    animation-delay: 320mss;
+    left: 20%;
+    top: 60%;
+  }
+
+  &-4 {
+    animation-delay: 600ms;
+    left: 40%;
+    bottom: 1100px;
+
+    @include bp(lg){ bottom: 2000px; }
+  }
+}
+
+.callout-section {
+  .media-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .text-block {
+    padding: 16px;
+    border-radius: 16px;
+    @include border;
+    transform: rotate(2deg);
+
+    &+.text-block {
+      margin-top: 32px;
+      transform: rotate(-2deg);
+    }
+
+    @include bp(md) {
+      padding: 24px;
+    }
+  }
+
+  .btn {
+    margin-top: 24px;
+  }
+}
+
+.cards-section {
+  h3 {
+    text-align: center;
+  }
+
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+
+    @include bp(md) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 40px; 
+    }    
+
+    @include bp(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }    
+  }
+
+  .card {
+    padding: 16px;
+    @include border;
+
+    &-container {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .text-wrapper {
+      padding: 8px 16px;
+
+      @include bp(xl){ padding: 16px; }
+    }
+
+    .media-block {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.gallery-section {
+  .slick-dots { background: transparent; }
+
+  .slick-slide { 
+    padding: 8px 8px 16px; 
+
+    @include bp(md){
+      padding: 8px 16px 24px;
+    }
+  }
+
+  .slick-slider .slick-slide:nth-child(odd) .gallery-item {
+    flex-direction: column-reverse;
+  }
+
+  .gallery-item {
+    display: flex !important;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .media-block {
+    @include border;
+    padding: 16px; 
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px; 
+    }
+  }
+}

@@ -53,7 +53,7 @@ export function EventCard({ events }: EventProps) {
      <div className="events-wrapper mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {events.map(event => (
           <div 
-            className='event border-default card-md relative gap-6' 
+            className='event relative gap-6' 
             key={event._key}
             style={{"backgroundColor": event.color.hex}}
           >

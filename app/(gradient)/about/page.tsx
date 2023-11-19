@@ -3,6 +3,7 @@ import { groq } from "next-sanity"
 import CalloutModule from "@/components/modules/callout-module"
 import CardsModule from "@/components/modules/cards-module"
 import GalleryModule from "@/components/modules/gallery-module"
+import "@/styles/pages/about.scss"
 
 type ImageType = {
   asset: {
@@ -22,7 +23,10 @@ type CalloutModuleType = {
 type CardsModuleType = {
   _type: 'module.cards',
   _key: string,
-  flyingTitle: string
+  image: ImageType,
+  alt: string,
+  title: string,
+  cards: []
 };
 
 type GalleryModuleType = {

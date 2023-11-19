@@ -1,18 +1,13 @@
 import Image from 'next/image'
+import HomeScene from "@/components/ui/home-scene"
+import HomeIntroClouds from "@/components/ui/home-intro"
+import HomePost from "@/components/ui/home-post"
 
 export default async function Page() {
   return (
     <>
-      {/* <header className="w-[5rem] bg-sub-bg rounded-md p-2 shadow-small-shadow">
-        <h3>Bar</h3>
-      </header>
-      <div className="w-[25rem] bg-sub-bg rounded-md p-2 shadow-small-shadow">
-        <h3>Management Bar</h3>
-      </div>
-      <div className="flex-1 bg-sub-bg rounded-md p-2 shadow-small-shadow">
-        <h3>Contents</h3>
-      </div> */}
-      <section className="intro">
+      <section className="intro desktop">
+        <HomeIntroClouds/>
         <Image
           src="/home/intro.svg"
           alt="hike clerb badge and some clouds"
@@ -22,13 +17,13 @@ export default async function Page() {
           id='intro-img'
         />
       </section>
-      <section className="scene">
+      <section className="scene desktop">
         <Image
           src="/home/mountains-back.svg"
           alt="mountains"
           width={1800}
           height={1200}
-          className='mountains-back-img'
+          className='mountains-back-img img'
           id='mountains-back-img'
         />
         
@@ -37,23 +32,40 @@ export default async function Page() {
           alt="mountains"
           width={1800}
           height={1200}
-          className='mountains-front-img'
+          className='mountains-front-img img'
           id='mountains-front-img'
         />
-         
+        
         <Image
           src="/home/hills.svg"
           alt="hike clerb girls hiking"
-          width={1800}
-          height={1200}
-          className='hike-clerb'
-          id='hike-clerb'
+          width={3063}
+          height={984}
+          className='hills img'
+          id='hills'
         />
+        <HomeScene/>
       </section>
-
-      <div className="background"></div>
-
-      
+      <div className="background desktop"></div>
+      <section className="mobile mobile-view">
+        <div className="container">
+          <Image
+            src="/home/home-badge.png"
+            alt="hike clerb badge"
+            width={200}
+            height={210}
+            className='badge-img'
+          />
+          <HomePost/>
+          {/* <Image
+            src="/home/home-post.svg"
+            alt="hike clerb badge"
+            width={230}
+            height={520}
+            className='post-img'
+          /> */}
+        </div>
+      </section>
     </>
   );
 }

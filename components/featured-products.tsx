@@ -36,13 +36,13 @@ interface Props {
       slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 767,
+          breakpoint: 1023,
           settings: {
             slidesToShow: 2,
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 767,
           settings: {
             slidesToShow: 1,
             infinite: true,

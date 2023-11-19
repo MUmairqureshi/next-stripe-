@@ -2,6 +2,7 @@ import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
 import { PortableText } from '@portabletext/react';
 import { RichTextComponents } from "@/components/RichTextComponents";
+import "@/styles/pages/pages.scss"
 
 interface Props {
   params: {

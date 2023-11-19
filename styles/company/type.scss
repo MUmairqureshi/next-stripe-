@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Lemiesz';
+  src: url('/fonts/lemiesz.woff2') format('woff2'),
+    url('/fonts/lemiesz.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Bingo';
+  src: url('/fonts/abcbingo-bold.woff2') format('woff2'),
+    url('/fonts/abcbingo-bold.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CC Matinee';
+  src: url('/fonts/ccmatineeidol.woff2') format('woff2'),
+    url('/fonts/ccmatineeidol.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Change Your Name';
+  src: url('/fonts/changeyourname.woff2') format('woff2'),
+    url('/fonts/changeyourname.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gallique';
+  src: url('/fonts/gallique-trial-light.woff2') format('woff2'),
+    url('/fonts/gallique-trial-light.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helve Cursive';
+  src: url('/fonts/helvecursive.woff2') format('woff2'),
+    url('/fonts/helvecursive.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-lemiesz: 'Lemiesz', sans-serif;
+$font-abc: 'ABC Bingo', sans-serif;
+$font-matinee: 'CC Matinee', sans-serif;
+$font-change: 'Change Your Name', sans-serif;
+$font-gallique: 'Gallique', sans-serif;
+$font-helve: 'Helve Cursive', sans-serif;

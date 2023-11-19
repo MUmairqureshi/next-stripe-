@@ -1,14 +1,15 @@
 import { defineType, defineField } from "sanity";
 
-export const product = defineType({
-  name: "product",
-  title: "Products",
+export const pages = defineType({
+  name: "pages",
+  title: "Legal Pages",
   type: "document",
   fields: [
     defineField({
-      name: "name",
-      title: "Name",
-      type: "string"
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "slug",
@@ -101,7 +102,7 @@ export const product = defineType({
   ],
   preview: {
     select: {
-      title: 'name',
-    },
+      title: 'title',
+    }
   }
 })

@@ -6,15 +6,8 @@ export default defineField({
   type: 'object',
   fields: [
     defineField({
-      name: "flyingTitle",
-      title: "Flying Title",
-      description: "This text will be inside of the plane banner!",
-      type: "string",
-    }),
-    defineField({
       name: "title",
-      title: "Regular Title",
-      description: "The flying title will trump this one, choose wisely.",
+      title: "Title",
       type: "string",
     }),
     defineField({
@@ -41,7 +34,7 @@ export default defineField({
   },
   preview: {
     select: {
-      title: 'flyingTitle',
+      title: 'Title',
     },
     prepare(selection) {
       const {title} = selection

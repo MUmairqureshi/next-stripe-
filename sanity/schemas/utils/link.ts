@@ -32,8 +32,8 @@ export default defineField({
         list: [
           { title: 'Primary', value: 'primary' },
           { title: 'Secondary', value: 'secondary' },
-          { title: 'Outline', value: 'outline' },
-          { title: 'Link', value: 'link' },
+          { title: 'Ghost', value: 'Ghost' },
+          { title: 'Text', value: 'text' },
         ],
       },
     }),
