@@ -18,6 +18,12 @@ export const structure = (S) =>
         S.documentTypeList('productCategory')
       ),
       S.listItem()
+      .title('Orders')
+      .schemaType('orders')
+      .child(
+        S.documentTypeList('orders')
+      ),
+      S.listItem()
       .title('Sizes')
       .schemaType('productSizes')
       .child(

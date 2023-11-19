@@ -54,6 +54,10 @@ export function ProductInfo({ product }: Props) {
     //     i_inventory[]{quantity,color->{color},size->{size}},
     //   }`
     // )
+    if (!product.i_inventory) {
+      setInventoryError(true)
+      return
+    }
     let inventory = product.i_inventory.find((val: any) => val.color === color && val.size === size)
     console.log(inventory);
     if (!inventory) {
