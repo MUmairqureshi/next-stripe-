@@ -5,19 +5,22 @@ import Link from "next/link"
 import { urlForImage } from "@/sanity/lib/image"
 import { Clock, X } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
-import { Product } from "use-shopping-cart/core"
+
 
 import { shimmer, toBase64 } from "@/lib/image"
-import { getSizeName } from "@/lib/utils"
+
 import { Button } from "@/components/ui/buttons"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/components/ui/use-toast"
 import { CartItemsEmpty } from "@/components/cart-items-empty"
 
 export function CartItems() {
-  const { cartDetails, removeItem, setItemQuantity } = useShoppingCart()
+  const { cartDetails, removeItem, setItemQuantity  } = useShoppingCart()
   const cartItems = Object.entries(cartDetails!).map(([_, product]) => product)
   const { toast } = useToast()
+  console.log(setItemQuantity)
+  console.log(cartItems)
+
 
   function removeCartItem(product:any) {
     removeItem(`${product._id}-${product.product_data?.size}-${product.product_data?.color}`)
@@ -82,7 +85,7 @@ export function CartItems() {
                   min={1}
                   max={10}
                   value={product.quantity}
-                  onChange={e => setItemQuantity(product._id, Number(e.target.value))}
+                  onChange={event => setItemQuantity(product._id, parseInt(event.target.value, ))}
                 />
                 <div className="absolute right-0 top-0">
                   <Button
